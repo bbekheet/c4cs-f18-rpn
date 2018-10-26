@@ -2,36 +2,36 @@
 
 def calculate(arg):
 # stack for calculator
-stack = []
+    
+    stack = []
 
 #tokenize input
-tokens = arg.split()
+    tokens = arg.split()
 
-#process tokens
+    #process tokens
 
-for token in tokens:
+    for token in tokens:
 
 	try:
-	value = int(token)
-	stack.append(value)
+	    value = int(token)
+	    stack.append(value)
 
 	except ValueError:
-	val1 = stack.pop()
-	val2 = stack.pop()
+	    val1 = stack.pop()
+	    val2 = stack.pop()
         if token == '+':
             result = val1 + val2
         elif token == '-':
             result = val1 - val2
-        elif token == '*'
-        result = val1 * val2
-        elif token == '/'
-        result = val1 / val2
+        elif token == '*':
+            result = val1 * val2
+        elif token == '/':
+            result = val1 / val2
 	stack.append(result)
 	return stack[0]
 
 def main():
-while True:
-calculate(input('rpn calc>'))
-
+    while True:
+        calculate(input('rpn calc>'))
 if __name__ == '__main__':
-main()
+ main()
